@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-w4a5yv1@w-9&!*4_k(l4k5!hy85c9m#e%vfy3f&zlg!-72b5+p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
 
 
 # Application definition
@@ -129,14 +129,14 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #manually type
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    
-]
+import os 
+
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
 
 
 
-STATIC_ROOT = BASE_DIR / "collected_static"
+
+STATIC_ROOT =os.path.join ( BASE_DIR , 'collected_static', 'staticfiles_build', 'static' )
 
 JAZZMIN_SETTINGS = {
     "site_title": "",
